@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import br.com.isaias.img.databinding.FragSplashBinding
+import br.com.isaias.img.databinding.FragmentSplashBinding
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -17,7 +17,7 @@ class SplashScreenFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return FragSplashBinding.inflate(inflater, container, false).root
+        return FragmentSplashBinding.inflate(inflater, container, false).root
     }
 
     override fun onResume() {
