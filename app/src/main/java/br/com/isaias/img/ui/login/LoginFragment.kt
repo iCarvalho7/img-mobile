@@ -38,12 +38,8 @@ class LoginFragment : Fragment() {
         viewModel.loggedUser.observe(viewLifecycleOwner, {
             when (it.status) {
                 Status.LOADING -> setUserInteractionEnabled(false)
-                Status.ERROR -> {
-                    //TODO
-                }
-                Status.SUCCESS -> {
-                    //TODO
-                }
+                Status.ERROR -> setUserInteractionEnabled(true)
+                Status.SUCCESS -> setUserInteractionEnabled(true)
             }
         })
     }
