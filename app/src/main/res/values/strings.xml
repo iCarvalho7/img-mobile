@@ -2,4 +2,14 @@
     <string name="app_name">.img</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forgot_my_password">Esqueci minha senha</string>
+    <string name="login_to_join">Entrar</string>
+    <string name="login_loading">Entrando</string>
+    <string name="password">Senha</string>
+    <string name="email">Email</string>
+    <string name="or_join_with">ou %s com:</string>
+    <string name="join">entre</string>
+    <string name="sing_up">cadastre-se</string>
+    <string name="login_have_not_account_yet">Ainda não possui uma conta?</string>
+    <string name="login_create_here">Crie aqui.</string>
 </resources>

@@ -5,6 +5,7 @@ import br.com.isaias.img.data.model.User
 import br.com.isaias.img.data.repository.UserRepository
 import br.com.isaias.img.value_obj.Resource
 import br.com.isaias.img.value_obj.Result
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class LoginViewModel(private val userRepository: UserRepository) : ViewModel() {
@@ -39,6 +40,7 @@ class LoginViewModel(private val userRepository: UserRepository) : ViewModel() {
     fun login(){
         viewModelScope.launch {
             _loggedUser.value = Resource.loading()
+            delay(3000)
             val result = userRepository.login()
             if (result is Result.Success) _loggedUser.value = Resource.success(result.data)
             if (result is Result.Error) _loggedUser.value = Resource.error(result.exception)
