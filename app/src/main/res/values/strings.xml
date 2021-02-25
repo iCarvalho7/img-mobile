@@ -16,4 +16,9 @@
     <string name="fake_last_name">Santos</string>
     <string name="fake_date">Santos</string>
     <string name="signup_terms_accept">Aceito os Termos de Uso e Política de Dados.</string>
+    <string name="singUp_error_username_invalid">Seu Usuário Precisa Ter 8 caratéres</string>
+    <string name="signUp_error_email_is_not_a_email">Formato inválido</string>
+    <string name="signUp_error_name_empty">O nome é obrigatório</string>
+    <string name="signUp_error_last_name_empty">O sobrenome é obrigatório</string>
+    <string name="sign_up_confirm_password_error_message">As senhas sao diferentes</string>
 </resources>

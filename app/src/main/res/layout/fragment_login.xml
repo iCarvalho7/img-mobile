@@ -7,6 +7,11 @@
         <variable
             name="viewModel"
             type="br.com.isaias.img.ui.login.LoginViewModel" />
+
+        <variable
+            name="fragment"
+            type="br.com.isaias.img.ui.login.LoginFragment" />
+
         <import type="br.com.isaias.img.value_obj.Status"/>
     </data>
 
@@ -216,10 +221,12 @@
                 android:text="@string/login_create_here"
                 android:clickable="true"
                 android:textColor="@color/primaryColor"
+                android:onClick="@{() -> fragment.navigateToSignUp()}"
                 app:layout_constraintBottom_toBottomOf="@+id/have_not_account_tv"
                 app:layout_constraintStart_toEndOf="@+id/have_not_account_tv"
                 app:layout_constraintTop_toTopOf="@+id/have_not_account_tv"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                android:focusable="true" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"

@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import br.com.isaias.img.R
 import br.com.isaias.img.databinding.FragmentLoginBinding
 import br.com.isaias.img.utils.setUserInteractionEnabled
 import br.com.isaias.img.value_obj.Status
@@ -27,6 +29,7 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment using biding
         return FragmentLoginBinding.inflate(inflater, container, false).let {
             it.lifecycleOwner = viewLifecycleOwner
+            it.fragment = this
             it.viewModel = viewModel
             it.root
         }
@@ -42,5 +45,9 @@ class LoginFragment : Fragment() {
                 Status.SUCCESS -> setUserInteractionEnabled(true)
             }
         })
+    }
+
+    fun navigateToSignUp(){
+        findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
     }
 }

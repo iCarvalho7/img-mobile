@@ -5,4 +5,5 @@ import br.com.isaias.img.value_obj.Result
 
 interface UserRepository {
     suspend fun login() : Result<User>
+    suspend fun signUp(createdUser: User) : Result<User>
 }

@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.isaias.img.R
 import br.com.isaias.img.databinding.FragmentSignUpBinding
+import br.com.isaias.img.utils.setUserInteractionEnabled
+import br.com.isaias.img.value_obj.Status
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
@@ -28,5 +30,16 @@ class SignUpFragment : Fragment() {
             it.viewModel = signUpViewModel
             it.root
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        signUpViewModel.userCreated.observe(viewLifecycleOwner, {
+            when (it.status) {
+                Status.LOADING -> setUserInteractionEnabled(false)
+                Status.ERROR -> setUserInteractionEnabled(true)
+                Status.SUCCESS -> setUserInteractionEnabled(true)
+            }
+        })
     }
 }
