@@ -1,4 +1,4 @@
-package br.com.isaias.img.ui
+package br.com.isaias.img
 
 import android.app.Application
 import androidx.multidex.MultiDex
