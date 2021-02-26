@@ -21,4 +21,7 @@
     <string name="signUp_error_name_empty">O nome é obrigatório</string>
     <string name="signUp_error_last_name_empty">O sobrenome é obrigatório</string>
     <string name="sign_up_confirm_password_error_message">As senhas sao diferentes</string>
+    <string name="letsgo">Vamos lá</string>
+    <string name="singup_dialog_sucess_bottom_text">Agora você pode ter uma experiência completa usando o aplicativo. :)</string>
+    <string name="congrats">Ebaaaaa!</string>
 </resources>
