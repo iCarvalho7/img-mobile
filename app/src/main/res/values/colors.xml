@@ -9,6 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#FAFAFA</color>
     <color name="primaryColor">#21939A</color>
+    <string name="secondaryAppColor">#1DB3BC</string>
+    <string name="colorAppVariant">#21939A</string>
     <color name="facebook_dark_blue">#3A6DBA</color>
     <color name="google_red">#B83535</color>
 </resources>

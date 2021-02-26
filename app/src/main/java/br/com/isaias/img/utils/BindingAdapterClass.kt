@@ -38,4 +38,12 @@ object BindingAdapterClass {
         if (isEnabled)
             textInputLayout.editText?.addTextChangedListener { textInputLayout.error = null }
     }
+
+    @JvmStatic
+    @BindingAdapter("setDatesMask")
+    fun setDatesMask(textInputEditText: TextInputEditText, isEnabled: Boolean) {
+        if (isEnabled) {
+            textInputEditText.addTextChangedListener(TextWatcherDates(textInputEditText))
+        }
+    }
 }

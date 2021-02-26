@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">.img</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -9,7 +9,16 @@
     <string name="email">Email</string>
     <string name="or_join_with">ou %s com:</string>
     <string name="join">entre</string>
-    <string name="sing_up">cadastre-se</string>
+    <string name="sign_up">cadastre-se</string>
     <string name="login_have_not_account_yet">Ainda não possui uma conta?</string>
     <string name="login_create_here">Crie aqui.</string>
+    <string name="fake_name">Mirelle</string>
+    <string name="fake_last_name">Santos</string>
+    <string name="fake_date">Santos</string>
+    <string name="signup_terms_accept">Aceito os Termos de Uso e Política de Dados.</string>
+    <string name="singUp_error_username_invalid">Seu Usuário Precisa Ter 8 caratéres</string>
+    <string name="signUp_error_email_is_not_a_email">Formato inválido</string>
+    <string name="signUp_error_name_empty">O nome é obrigatório</string>
+    <string name="signUp_error_last_name_empty">O sobrenome é obrigatório</string>
+    <string name="sign_up_confirm_password_error_message">As senhas sao diferentes</string>
 </resources>

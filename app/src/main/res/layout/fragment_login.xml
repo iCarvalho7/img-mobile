@@ -7,6 +7,11 @@
         <variable
             name="viewModel"
             type="br.com.isaias.img.ui.login.LoginViewModel" />
+
+        <variable
+            name="fragment"
+            type="br.com.isaias.img.ui.login.LoginFragment" />
+
         <import type="br.com.isaias.img.value_obj.Status"/>
     </data>
 
@@ -55,7 +60,7 @@
                 android:id="@+id/text_layout_email"
                 style="@style/TextInputLayout.Base"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/text_input_height"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/email_tv">
@@ -93,7 +98,7 @@
                 android:id="@+id/text_layout_passwd"
                 style="@style/TextInputLayout.Base"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/text_input_height"
                 app:boxBackgroundColor="@android:color/transparent"
                 app:layout_constraintEnd_toEndOf="@+id/text_layout_email"
                 app:layout_constraintStart_toStartOf="@+id/text_layout_email"
@@ -133,7 +138,7 @@
                 android:id="@+id/enter_login_button"
                 style="@style/MaterialButton.Base"
                 android:layout_width="0dp"
-                android:layout_height="35dp"
+                android:layout_height="@dimen/button_height"
                 android:layout_marginTop="8dp"
                 tools:text="@string/login_to_join"
                 android:enabled="@{viewModel.loggedUser.status != Status.LOADING &amp;&amp; viewModel.areFieldsFilled ? true : false }"
@@ -216,10 +221,12 @@
                 android:text="@string/login_create_here"
                 android:clickable="true"
                 android:textColor="@color/primaryColor"
+                android:onClick="@{() -> fragment.navigateToSignUp()}"
                 app:layout_constraintBottom_toBottomOf="@+id/have_not_account_tv"
                 app:layout_constraintStart_toEndOf="@+id/have_not_account_tv"
                 app:layout_constraintTop_toTopOf="@+id/have_not_account_tv"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                android:focusable="true" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"

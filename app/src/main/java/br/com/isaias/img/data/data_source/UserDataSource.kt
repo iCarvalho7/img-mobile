@@ -15,4 +15,11 @@ class UserDataSource(
     }catch (e : Exception){
         Result.Error(e)
     }
+
+    override suspend fun signUp(createdUser: User): Result<User> = try {
+        val result = userService.createUser(createdUser)
+        result
+    }catch (e : Exception){
+        Result.Error(e)
+    }
 }

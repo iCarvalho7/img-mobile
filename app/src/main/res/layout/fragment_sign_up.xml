@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="br.com.isaias.img.ui.signup.SignUpViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroolView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="always">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_gradient"
+            tools:context=".ui.signup.SignUpFragment">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/signUp_toolbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/abc_vector_test">
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    style="@style/TextAppearance.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/constraintLayout_white"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signUp_toolbar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_white_rounded"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/signUp_tv_name"
+                        style="@style/TextAppearance.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nome"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/signUp_text_layout_name"
+                        style="@style/TextInputLayout.Base"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        clearErrorAsTyping="@{true}"
+                        app:layout_constraintEnd_toStartOf="@id/signUp_text_layout_last_name"
+                        app:layout_constraintStart_toStartOf="@+id/signUp_tv_name"
+                        app:layout_constraintTop_toBottomOf="@+id/signUp_tv_name"
+                        app:layout_constraintVertical_chainStyle="packed">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/signUp_text_input_name"
+                            style="@style/TextInputEditText.Base"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:text="@={viewModel.name}"
+                            android:inputType="textPersonName|textCapWords"
+                            app:hintCleared="@{`Mirela`}"
+                            android:maxLength="30"
+                            tools:hint="Isaias" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/signUp_tv_last_name"
+                        style="@style/TextAppearance.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sobrenome"
+                        app:layout_constraintStart_toStartOf="@+id/signUp_text_layout_last_name"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/signUp_text_layout_last_name"
+                        style="@style/TextInputLayout.Base"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        clearErrorAsTyping="@{true}"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/signUp_text_layout_name"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/signUp_text_layout_name"
+                        app:layout_constraintTop_toTopOf="@+id/signUp_text_layout_name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/signUp_text_input_last_name"
+                            style="@style/TextInputEditText.Base"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:maxLength="100"
+                            android:text="@={viewModel.lastName}"
+                            android:inputType="textPersonName|textCapWords"
+                            app:hintCleared="@{`Santos`}"
+                            tools:text="Carvalho" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/signUp_tv_username"
+                        style="@style/TextAppearance.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Usuário"
+                        app:layout_constraintStart_toStartOf="@+id/signUp_text_layout_name"
+                        app:layout_constraintTop_toBottomOf="@+id/signUp_text_layout_name" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/signUp_text_layout_username"
+                        style="@style/TextInputLayout.Base"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        error="@{viewModel.usernameError}"
+                        clearErrorAsTyping="@{true}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/signUp_text_layout_name"
+                        app:layout_constraintTop_toBottomOf="@+id/signUp_tv_username">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/signUp_text_input_username"
+                            style="@style/TextInputEditText.Base"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLength="8"
+                            android:imeOptions="actionNext"
+                            android:text="@={viewModel.username}"
+                            android:inputType="textPersonName|textCapWords"
+                            app:hintCleared="@{`!@%misant`}"
+                            tools:text="!@%misant_" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/signUp_tv_email"
+                        style="@style/TextAppearance.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Email"
+                        app:layout_constraintStart_toStartOf="@+id/signUp_text_layout_username"
+                        app:layout_constraintTop_toBottomOf="@+id/signUp_text_layout_username" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/signUp_text_layout_email"
+                        style="@style/TextInputLayout.Base"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        error="@{viewModel.emailError}"
+                        clearErrorAsTyping="@{true}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/signUp_text_layout_name"
+                        app:layout_constraintTop_toBottomOf="@+id/signUp_tv_email">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/signUp_text_input_email"
+                            style="@style/TextInputEditText.Base"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:text="@={viewModel.email}"
+                            android:maxLength="50"
+                            android:inputType="textEmailAddress"
+                            app:hintCleared="@{`email@email.com`}"
+                            tools:text="email@email.com" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/signUp_tv_date"
+                        style="@style/TextAppearance.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Data de Nascimento"
+                        app:layout_constraintStart_toStartOf="@+id/signUp_text_layout_username"
+                        app:layout_constraintTop_toBottomOf="@+id/signUp_text_layout_email" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/signUp_text_layout_bith_date"
+                        style="@style/TextInputLayout.Base"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        clearErrorAsTyping="@{true}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/signUp_text_layout_name"
+                        app:layout_constraintTop_toBottomOf="@+id/signUp_tv_date">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/signUp_text_input_bith_date"
+                            style="@style/TextInputEditText.Base"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            setDatesMask="@{true}"
+                            android:drawableEnd="@drawable/ic_calendar"
+                            android:imeOptions="actionNext"
+                            android:text="@={viewModel.birthDate}"
+                            android:inputType="date"
+                            android:maxLength="10"
+                            app:hintCleared="@{`dd/mm/yyyy`}"
+                            tools:text="21/11/2000" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/signUp_tv_password"
+                        style="@style/TextAppearance.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Senha"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/signUp_text_layout_bith_date" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/signUp_text_layout_password"
+                        style="@style/TextInputLayout.Base"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        error="@{viewModel.passwordError}"
+                        clearErrorAsTyping="@{true}"
+                        app:layout_constraintEnd_toStartOf="@+id/signUp_text_layout_last_confirm_password"
+                        app:layout_constraintStart_toStartOf="@+id/signUp_tv_name"
+                        app:layout_constraintTop_toBottomOf="@+id/signUp_tv_password"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/primaryColor">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/signUp_text_input_password"
+                            style="@style/TextInputEditText.Base"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:text="@={viewModel.password}"
+                            android:inputType="textPassword"
+                            android:maxLength="8"
+                            app:hintCleared="@{`*********`}"
+                            tools:hint="********" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/signUp_tv_last_confirm_password"
+                        style="@style/TextAppearance.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repetir a Senha"
+                        app:layout_constraintStart_toStartOf="@+id/signUp_text_layout_last_confirm_password"
+                        app:layout_constraintTop_toTopOf="@+id/signUp_tv_password" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/signUp_text_layout_last_confirm_password"
+                        style="@style/TextInputLayout.Base"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        error="@{viewModel.passwordError}"
+                        clearErrorAsTyping="@{true}"
+                        app:layout_constraintBottom_toBottomOf="@+id/signUp_text_layout_password"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/signUp_text_layout_password"
+                        app:layout_constraintTop_toTopOf="@+id/signUp_text_layout_password"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/primaryColor">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/signUp_text_input_last_confirm_password"
+                            style="@style/TextInputEditText.Base"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:text="@={viewModel.confirmPassword}"
+                            android:maxLength="8"
+                            app:hintCleared="@{`*********`}"
+                            tools:hint="**********" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/harmattan_regular"
+                        android:checked="@={viewModel.isTermsAccpted()}"
+                        android:text="@string/signup_terms_accept"
+                        android:textColor="@android:color/darker_gray"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/signUp_text_layout_password" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button2"
+                        style="@style/MaterialButton.Base"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/button_height"
+                        android:enabled="@{viewModel.areFieldsFilled ? true : false}"
+                        android:onClick="@{() -> viewModel.signUp()}"
+                        android:text="Cadastrar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/harmattan_regular"
+                android:text="@{@string/or_join_with(@string/sign_up)}"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout_white"
+                tools:text="ou cadastre-se com:" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="10dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toStartOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout_white"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="@+id/constraintLayout_white"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+            <br.com.isaias.img.ui.views.GoogleMaterialButton
+                android:id="@+id/signUp_googleButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/signUp_facebookButton"
+                app:layout_constraintStart_toStartOf="@+id/view3"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <br.com.isaias.img.ui.views.FacebookMaterialButton
+                android:id="@+id/signUp_facebookButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/view4"
+                app:layout_constraintStart_toEndOf="@id/signUp_googleButton"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
