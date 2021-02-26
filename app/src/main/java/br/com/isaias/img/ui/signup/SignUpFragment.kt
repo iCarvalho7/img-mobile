@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.com.isaias.img.R
 import br.com.isaias.img.databinding.FragmentSignUpBinding
 import br.com.isaias.img.utils.setUserInteractionEnabled
 import br.com.isaias.img.value_obj.Status
@@ -38,7 +37,10 @@ class SignUpFragment : Fragment() {
             when (it.status) {
                 Status.LOADING -> setUserInteractionEnabled(false)
                 Status.ERROR -> setUserInteractionEnabled(true)
-                Status.SUCCESS -> setUserInteractionEnabled(true)
+                Status.SUCCESS -> {
+                    setUserInteractionEnabled(true)
+                    SignUpSuccessDialog().show(childFragmentManager, "monobisexual")
+                }
             }
         })
     }

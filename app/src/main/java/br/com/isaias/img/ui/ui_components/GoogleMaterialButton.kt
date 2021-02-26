@@ -1,4 +1,4 @@
-package br.com.isaias.img.ui.views
+package br.com.isaias.img.ui.ui_components
 
 import android.content.Context
 import android.util.AttributeSet

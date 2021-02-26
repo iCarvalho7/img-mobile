@@ -372,7 +372,7 @@
                 app:layout_constraintStart_toEndOf="@+id/textView"
                 app:layout_constraintTop_toTopOf="@+id/textView" />
 
-            <br.com.isaias.img.ui.views.GoogleMaterialButton
+            <br.com.isaias.img.ui.ui_components.GoogleMaterialButton
                 android:id="@+id/signUp_googleButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -382,7 +382,7 @@
                 app:layout_constraintStart_toStartOf="@+id/view3"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <br.com.isaias.img.ui.views.FacebookMaterialButton
+            <br.com.isaias.img.ui.ui_components.FacebookMaterialButton
                 android:id="@+id/signUp_facebookButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
