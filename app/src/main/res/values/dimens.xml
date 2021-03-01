@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="text_input_height">40dp</dimen>
     <dimen name="button_height">35dp</dimen>
+    <dimen name="design_bottom_navigation_height" tools:override="true">52dp</dimen>
+    <dimen name="app_logo_size">45dp</dimen>
 </resources>
