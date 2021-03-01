@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="dialog"
+            type="br.com.isaias.img.ui.photos.dialog.SelectPhotoDialog" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <ImageView
+            android:id="@+id/dialog_photo_close"
+            android:layout_width="@dimen/ic_dialog_photo_size"
+            android:layout_height="@dimen/ic_dialog_photo_size"
+            android:elevation="5dp"
+            android:onClick="@{() -> dialog.dismiss()}"
+            android:src="@drawable/ic_close_dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/dialog_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            app:layout_constraintBottom_toTopOf="@id/dialog_photo_download"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_singup_success" />
+
+        <ImageView
+            android:id="@+id/dialog_photo_share"
+            android:layout_width="@dimen/ic_dialog_photo_size"
+            android:layout_height="@dimen/ic_dialog_photo_size"
+            android:onClick="@{() -> dialog.sharePhoto()}"
+            android:src="@drawable/ic_share_photo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_photo" />
+
+        <ImageView
+            android:id="@+id/dialog_photo_download"
+            android:layout_width="@dimen/ic_dialog_photo_size"
+            android:layout_height="@dimen/ic_dialog_photo_size"
+            android:onClick="@{() -> dialog.downloadPhoto()}"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_download_photo"
+            app:layout_constraintStart_toEndOf="@+id/dialog_photo_share"
+            app:layout_constraintTop_toTopOf="@+id/dialog_photo_share" />
+
+        <CheckBox
+            android:id="@+id/dialog_photo_favorite"
+            android:layout_width="@dimen/ic_dialog_photo_size"
+            android:layout_height="@dimen/ic_dialog_photo_size"
+            android:background="@drawable/background_button_favorite"
+            android:button="@android:color/transparent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/dialog_photo_download"
+            app:layout_constraintTop_toTopOf="@+id/dialog_photo_share"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

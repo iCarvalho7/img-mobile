@@ -1,16 +1,14 @@
 package br.com.isaias.img.ui.photos
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import br.com.isaias.img.R
 import br.com.isaias.img.data.model.Photo
-import br.com.isaias.img.databinding.ItemPhotosBinding
 import br.com.isaias.img.databinding.PhotosFragmentBinding
+import br.com.isaias.img.ui.photos.dialog.SelectPhotoDialog
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PhotosFragment : Fragment() {
@@ -25,7 +23,15 @@ class PhotosFragment : Fragment() {
     ): View? {
         binding = PhotosFragmentBinding.inflate(inflater, container, false)
         setupAdapter()
+        setUpListeners()
         return binding.root
+    }
+
+    private fun setUpListeners() {
+        adapter.onClickListener = {
+            val dialog = SelectPhotoDialog(viewModel, it)
+            dialog.show(childFragmentManager, "ag")
+        }
     }
 
     private fun setupAdapter() {
