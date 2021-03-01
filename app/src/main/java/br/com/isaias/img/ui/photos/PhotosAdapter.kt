@@ -7,19 +7,23 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.isaias.img.R
 import br.com.isaias.img.data.model.Photo
-import br.com.isaias.img.databinding.DialogFragSingupSuccessBinding
 import br.com.isaias.img.databinding.ItemPhotosBinding
+import br.com.isaias.img.utils.options
 import com.bumptech.glide.Glide
 
 class PhotosAdapter :
     ListAdapter<Photo, PhotosAdapter.PhotosAdapterViewHolder>(PhotosDiffCallback()) {
-
-    class PhotosAdapterViewHolder(private val binding: ItemPhotosBinding) :
+    var onClickListener : ((String) -> Unit)? = null
+    inner class PhotosAdapterViewHolder(private val binding: ItemPhotosBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Photo) {
+            binding.image.setOnClickListener {
+                onClickListener!!.invoke(item.url)
+            }
+
             Glide.with(binding.root)
+                .applyDefaultRequestOptions(options)
                 .load(item.url)
-                .placeholder(R.drawable.app_logo)
                 .into(binding.image)
         }
     }
