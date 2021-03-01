@@ -1,6 +1,6 @@
 package br.com.isaias.img.data.service
 
-import br.com.isaias.img.data.model.Photos
+import br.com.isaias.img.data.model.Photo
 import br.com.isaias.img.data.model.User
 import br.com.isaias.img.utils.baseRetrofit
 import br.com.isaias.img.value_obj.Result
@@ -34,7 +34,7 @@ interface UserService {
         @Path("id") id: Long,
         @Query("page") page: Int,
         @Query("search") search : String
-    ): Result<Photos>
+    ): Result<Photo>
 
     companion object {
         fun getInstance(): UserService = baseRetrofit.create(UserService::class.java)
