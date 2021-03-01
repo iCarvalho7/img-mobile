@@ -3,13 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_host_fragment"
-    app:startDestination="@id/loginFragment">
-
-    <fragment
-        android:id="@+id/splashScreenFragment"
-        android:name="br.com.isaias.img.ui.splash.SplashScreenFragment"
-        tools:layout="@layout/fragment_splash"
-        android:label="SplashScreenFragment" />
+    app:startDestination="@id/splashScreenFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -26,4 +20,25 @@
         tools:layout="@layout/fragment_sign_up"
         android:name="br.com.isaias.img.ui.signup.SignUpFragment"
         android:label="SignUpFragment" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        tools:layout="@layout/fragment_home"
+        android:name="br.com.isaias.img.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="br.com.isaias.img.ui.splash.SplashScreenFragment"
+        tools:layout="@layout/fragment_splash"
+        android:label="SplashScreenFragment" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
 </navigation>

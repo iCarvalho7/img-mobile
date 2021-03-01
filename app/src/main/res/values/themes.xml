@@ -59,4 +59,15 @@
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowBackground">@color/colorPrimary</item>
     </style>
+
+    <style name="navTextInactive" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/harmattan_bold</item>
+    </style>
+
+    <style name="navTextActive" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/harmattan_bold</item>
+        <item name="iconSize">22dp</item>
+    </style>
 </resources>
