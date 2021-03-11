@@ -24,9 +24,9 @@
 
 O projeto foi iniciado como um trabalho da faculdade para a disciplina de Projeto Integrado<br/>
 
-Foi proposto para os alunos que escolhssem a stack que mais tem habilidade para desenvolver o projeto.
+Foi proposto para os alunos que escolhessem a stack que mais tem habilidade para desenvolver o projeto.
 
-A partir disso, me deafiei a unir tudo o que conhecia de boas pŕaticas de progrmação, padrões de arquitetura e requisitos técnicos e por em prática em um único projeto.
+A partir disso, me desafiei a unir tudo o que conhecia de boas pŕaticas de progrmação, padrões de arquitetura e requisitos técnicos e por em prática em um único projeto.
 
 ## :art: Protótipo
 O protótipo foi feito inicialmente utilizando o Figma e pode ser acessado no link abaixo:
@@ -47,7 +47,7 @@ O projeto está sendo implementado utilizando:<br/>
     <img ent src="https://github.com/iCarvalho7/img-mobile/blob/dev/image/mvvm.png" style="display: inline; float: center"/>
 </p>
   
-Além disso, foi utlizado diversas bibliotecas do Android JetPack, como: AndroidX, Navigation Component e Lifecycle.    
+Além disso, foram utlizadas diversas bibliotecas do Android JetPack, como: AndroidX, Navigation Component e Lifecycle.    
 
 ## :clap: Resultado
 <p align="center">
@@ -55,7 +55,7 @@ Além disso, foi utlizado diversas bibliotecas do Android JetPack, como: Android
     <img ent src="https://github.com/iCarvalho7/img-mobile/blob/dev/image/app_navigation.gif" alt="A demo illustraating the UI of the app" width="300" height="600" style="display: inline; float: center"/>
 </p>
 
-Você pode testar a aplicação após os seguitnes passos: <br/>
+Você pode testar a aplicação após os seguintes passos: <br/>
   
 - Abra o Android Studio</br>
 - File -> New -> Project From Version Control</br>
