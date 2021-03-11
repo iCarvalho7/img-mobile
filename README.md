@@ -36,7 +36,7 @@ O protótipo foi feito inicialmente utilizando o Figma e pode ser acessado no li
 ## :computer: Implementação
 O projeto está sendo implementado utilizando:<br/>
 
-  **Lingagem:** Kotlin<br/>
+  **Linguagem:** Kotlin<br/>
   **Interface:** Android Material Design, Views Customizadas, ConstraintLayout.<br/>
   **Parte Lógica:** ViewModel, LiveData.<br/>
   **Comunicação com DB:** Retrofit, Okhttp e Room Database.  <br/> <br/>
