@@ -43,7 +43,6 @@ O projeto está sendo implementado utilizando:<br/>
   
   **Padrão de Arquitetura: MVVM (Model View View Model)**<br/>
   <p align="center">
-    Este foi o resultado do projeto:</br>
     <img ent src="https://github.com/iCarvalho7/img-mobile/blob/dev/image/mvvm.png" style="display: inline; float: center"/>
 </p>
   
