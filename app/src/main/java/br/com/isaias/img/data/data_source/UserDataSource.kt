@@ -4,6 +4,7 @@ import br.com.isaias.img.data.model.User
 import br.com.isaias.img.data.repository.UserRepository
 import br.com.isaias.img.data.service.UserService
 import br.com.isaias.img.value_obj.Result
+import retrofit2.HttpException
 
 class UserDataSource(
     private val userService: UserService
@@ -11,17 +12,23 @@ class UserDataSource(
 
     override suspend fun login(): Result<User> = try {
         val result = userService.login()
-        result
+        if(result.isSuccessful && result.body() != null){
+            Result.Success(result.body())
+        }else{
+            Result.Error(HttpException(result))
+        }
     }catch (e : Exception){
         Result.Error(e)
     }
 
     override suspend fun signUp(createdUser: User): Result<User> = try {
         val result = userService.createUser(createdUser)
-        result as Result.Success
+        if(result.isSuccessful && result.body() != null){
+            Result.Success(result.body())
+        }else{
+            Result.Error(HttpException(result))
+        }
     }catch (e : Exception){
-        Result.Success(
-            User("", "", "", "", "", "")
-        )
+        Result.Error(e)
     }
 }
