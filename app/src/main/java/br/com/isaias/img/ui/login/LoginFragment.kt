@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import br.com.isaias.img.R
 import br.com.isaias.img.databinding.FragmentLoginBinding
@@ -38,7 +39,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.loggedUser.observe(viewLifecycleOwner, {
+        viewModel.loggedUser.observe(viewLifecycleOwner, Observer{
             when (it.status) {
                 Status.LOADING -> setUserInteractionEnabled(false)
                 Status.ERROR -> setUserInteractionEnabled(true)
