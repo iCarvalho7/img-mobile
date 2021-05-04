@@ -26,7 +26,7 @@ class SplashScreenFragment: Fragment() {
     override fun onResume() {
         super.onResume()
         Handler().postDelayed ({
-            findNavController().navigate(R.id.action_splashScreenFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_splashScreenFragment_to_loginFragment)
         }, 2000)
     }
 }
