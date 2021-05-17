@@ -5,6 +5,7 @@ import br.com.isaias.img.R
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -20,7 +21,7 @@ val client = OkHttpClient.Builder()
     .build()
 
 val baseRetrofit: Retrofit = Retrofit.Builder()
-    .baseUrl("https://www.figma.com/")
+    .baseUrl("http://172.18.0.3:3333/".toHttpUrl())
     .client(client)
     .addConverterFactory(GsonConverterFactory.create())
     .build()

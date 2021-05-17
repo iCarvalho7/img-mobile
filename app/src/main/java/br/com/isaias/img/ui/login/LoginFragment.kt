@@ -43,7 +43,7 @@ class LoginFragment : Fragment() {
             when (it.status) {
                 Status.LOADING -> setUserInteractionEnabled(false)
                 Status.ERROR -> setUserInteractionEnabled(true)
-                Status.SUCCESS -> setUserInteractionEnabled(true)
+                Status.SUCCESS -> findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
             }
         })
     }

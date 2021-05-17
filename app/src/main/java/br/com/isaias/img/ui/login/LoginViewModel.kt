@@ -40,9 +40,8 @@ class LoginViewModel(private val userRepository: UserRepository) : ViewModel() {
     fun login(){
         viewModelScope.launch {
             _loggedUser.value = Resource.loading()
-            delay(3000)
-            val result = userRepository.login()
-            if (result is Result.Success) _loggedUser.value = Resource.success(result.data)
+            val result = userRepository.login(email.value ?: "", password.value ?: "")
+            if (result is Result.Success) _loggedUser.value = Resource.success(result.data?.user)
             if (result is Result.Error) _loggedUser.value = Resource.error(result.exception)
         }
     }

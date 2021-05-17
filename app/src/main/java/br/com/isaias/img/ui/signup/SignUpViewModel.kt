@@ -8,6 +8,7 @@ import br.com.isaias.img.data.repository.UserRepository
 import br.com.isaias.img.value_obj.Resource
 import br.com.isaias.img.value_obj.Result
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
 
 class SignUpViewModel(private val userRepository: UserRepository) : ViewModel() {
 
@@ -73,7 +74,7 @@ class SignUpViewModel(private val userRepository: UserRepository) : ViewModel() 
 
             viewModelScope.launch {
                 val result = userRepository.signUp(createdUser)
-                if (result is Result.Success) _userCreated.value = Resource.success(result.data)
+                if (result is Result.Success) _userCreated.value = Resource.success(result.data?.user)
                 if (result is Result.Error) _userCreated.value = Resource.error(result.exception)
             }
         }
@@ -84,9 +85,14 @@ class SignUpViewModel(private val userRepository: UserRepository) : ViewModel() 
         lastName = lastName.value ?: "",
         username = username.value ?: "",
         email = email.value ?: "",
-        birthDate = birthDate.value ?: "",
+        birthDate = convertToFormatedDate(),
         password = password.value ?: ""
     )
+
+    private fun convertToFormatedDate(): String {
+        val lastDate = SimpleDateFormat("dd/MM/yyyy").parse(birthDate.value.toString())
+        return SimpleDateFormat("yyyy-MM-dd").format(lastDate)
+    }
 
     val hasError: Boolean
         get() {

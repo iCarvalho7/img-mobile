@@ -4,6 +4,4 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Photo(
-    val url : String
-) : Parcelable
+data class AuthUser(val email : String, val password : String) : Parcelable

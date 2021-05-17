@@ -1,7 +1,9 @@
 package br.com.isaias.img.data.service
 
+import br.com.isaias.img.data.model.AuthUser
 import br.com.isaias.img.data.model.Photo
 import br.com.isaias.img.data.model.User
+import br.com.isaias.img.data.model.response.UserResponse
 import br.com.isaias.img.utils.baseRetrofit
 import br.com.isaias.img.value_obj.Result
 import retrofit2.Response
@@ -9,8 +11,9 @@ import retrofit2.http.*
 
 interface UserService {
 
-    @POST("auth")
-    suspend fun login(): Response<User>
+    @POST("users/authenticate")
+    suspend fun login( @Body authUser : AuthUser
+    ): Response<UserResponse>
 
     @GET("users")
     suspend fun verifyIfUserExists(
@@ -19,7 +22,7 @@ interface UserService {
     ): Response<Boolean>
 
     @POST("users")
-    suspend fun createUser(@Body createdUser: User): Response<User>
+    suspend fun createUser(@Body createdUser: User): Response<UserResponse>
 
     @PUT("users/{id}")
     suspend fun updateUser(@Path("id ") id: Long, updatedUser: User): Response<User>
